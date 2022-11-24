@@ -9,7 +9,7 @@ const Banner = (props) => {
         <div>
           <span>A place to </span>
           <span id="get-part">get</span>
-          <input id='search-box' minLength='3' type="text" onChange={(e) => props.onChangeTitle(e.target.value)} />
+          <input id='search-box' minLength='3' type="search" onChange={(e) => props.onChangeTitle(e.target.value)} />
           <span> the cool stuff.</span>
         </div>
       </div>
