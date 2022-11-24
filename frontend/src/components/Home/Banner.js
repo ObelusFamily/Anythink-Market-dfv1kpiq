@@ -9,6 +9,7 @@ const Banner = () => {
         <div>
           <span>A place to </span>
           <span id="get-part">get</span>
+          <input id='search-box' minlength='3' type="text" />
           <span> the cool stuff.</span>
         </div>
       </div>
