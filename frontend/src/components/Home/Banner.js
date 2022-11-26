@@ -8,13 +8,11 @@ const Banner = (props) => {
    *  */
   const handeChange = (e) => {
     const title = e.target.value;
-    if (title.length >= 5) {
-      props.onChangeTitle(
-        title,
-        (page) => agent.Items.byTitle(title, page),
-        agent.Items.byTitle(title)
-      );
-    }
+    props.onChangeTitle(
+      title,
+      (page) => agent.Items.byTitle(title, page),
+      agent.Items.byTitle(title)
+    );
   };
 
   return (
