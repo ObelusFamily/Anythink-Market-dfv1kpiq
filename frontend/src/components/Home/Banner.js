@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../imgs/logo.png";
 
-const Banner = () => {
+const Banner = (props) => {
   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
@@ -9,6 +9,12 @@ const Banner = () => {
         <div>
           <span>A place to </span>
           <span id="get-part">get</span>
+          <input
+            id="search-box"
+            minLength="3"
+            type="search"
+            onChange={(e) => props.onChangeTitle(e.target.value)}
+          />
           <span> the cool stuff.</span>
         </div>
       </div>
