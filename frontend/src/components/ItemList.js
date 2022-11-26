@@ -8,6 +8,15 @@ const ItemList = (props) => {
   }
 
   if (props.items.length === 0) {
+    if (props?.title?.length >= 5) {
+      return (
+        <div className="py-4 no-items">
+          <div className="container bg-not-found py-2">
+            No items found for "<strong>{props.title}</strong>".
+          </div>
+        </div>
+      );
+    }
     return <div className="py-4 no-items">No items are here... yet.</div>;
   }
 

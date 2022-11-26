@@ -48,10 +48,9 @@ const reducer = (state = {}, action) => {
         currentPage: 0,
       };
     case CHANGE_TITLE_FILTER:
-      // not store "aciton.title",
-      // add that when needed.
       return {
         ...state,
+        title: action.title,
         pager: action.pager,
         items: action.payload.items,
         itemsCount: action.payload.itemsCount,
@@ -66,6 +65,7 @@ const reducer = (state = {}, action) => {
         itemsCount: action.payload[1].itemsCount,
         currentPage: 0,
         tab: action.tab,
+        title: null,
       };
     case HOME_PAGE_UNLOADED:
       return {};
