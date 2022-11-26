@@ -10,6 +10,7 @@ import {
   PROFILE_PAGE_UNLOADED,
   PROFILE_FAVORITES_PAGE_LOADED,
   PROFILE_FAVORITES_PAGE_UNLOADED,
+  CHANGE_TITLE_FILTER,
 } from "../constants/actionTypes";
 
 const reducer = (state = {}, action) => {
@@ -46,6 +47,15 @@ const reducer = (state = {}, action) => {
         tag: action.tag,
         currentPage: 0,
       };
+    case CHANGE_TITLE_FILTER:
+      return {
+        ...state,
+        title: action.title,
+        pager: action.pager,
+        items: action.payload.items,
+        itemsCount: action.payload.itemsCount,
+        currentPage: 0,
+      };
     case HOME_PAGE_LOADED:
       return {
         ...state,
@@ -55,6 +65,7 @@ const reducer = (state = {}, action) => {
         itemsCount: action.payload[1].itemsCount,
         currentPage: 0,
         tab: action.tab,
+        title: null,
       };
     case HOME_PAGE_UNLOADED:
       return {};
