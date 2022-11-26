@@ -1,21 +1,21 @@
 import React from "react";
-import agent from '../../agent';
+import agent from "../../agent";
 import logo from "../../imgs/logo.png";
 
 const Banner = (props) => {
-
   /**
    * @param {string} title input value
-   *  */  
-  const handeChange  = (e) => { 
-    const title = e.target.value 
-    if(title.length >= 5) {
+   *  */
+  const handeChange = (e) => {
+    const title = e.target.value;
+    if (title.length >= 5) {
       props.onChangeTitle(
-        title,   
+        title,
         (page) => agent.Items.byTitle(title, page),
-        agent.Items.byTitle(title))
+        agent.Items.byTitle(title)
+      );
     }
-  }
+  };
 
   return (
     <div className="banner text-white">
