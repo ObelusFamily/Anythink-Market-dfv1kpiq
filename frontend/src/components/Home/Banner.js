@@ -1,7 +1,22 @@
 import React from "react";
+import agent from '../../agent';
 import logo from "../../imgs/logo.png";
 
 const Banner = (props) => {
+
+  /**
+   * @param {string} title input value
+   *  */  
+  const handeChange  = (e) => { 
+    const title = e.target.value 
+    if(title.length >= 5) {
+      props.onChangeTitle(
+        title,   
+        (page) => agent.Items.byTitle(title, page),
+        agent.Items.byTitle(title))
+    }
+  }
+
   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
@@ -13,7 +28,7 @@ const Banner = (props) => {
             id="search-box"
             minLength="3"
             type="search"
-            onChange={(e) => props.onChangeTitle(e.target.value)}
+            onChange={handeChange}
           />
           <span> the cool stuff.</span>
         </div>
